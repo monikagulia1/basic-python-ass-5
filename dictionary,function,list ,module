@@ -1,0 +1,53 @@
+1. What does an empty dictionary's code look like?
+2. What is the value of a dictionary value with the key 'foo' and the value 42?
+3. What is the most significant distinction between a dictionary and a list?
+4. What happens if you try to access spam['foo'] if spam is {'bar': 100}?
+5. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and
+'cat' in spam.keys()?
+6. If a dictionary is stored in spam, what is the difference between the expressions 'cat&' in spam and
+'cat' in spam.values()?
+7. What is a shortcut for the following code?
+if 'color' not in spam:
+spam['color'] = 'black'
+8. How do you "pretty print" dictionary values using which module and function?
+
+answers-
+  1. An empty dictionary's code looks like this:
+```python
+my_dict = {}
+```
+
+2. The value of a dictionary with the key 'foo' and the value 42 would be represented as:
+```python
+my_dict = {'foo': 42}
+```
+
+3. The most significant distinction between a dictionary and a list is how they store and access data. 
+
+- A dictionary is an unordered collection of key-value pairs, where each key is unique. It uses a hash table implementation, allowing for efficient retrieval of values based on their associated keys. Dictionary keys can be of any immutable type, such as strings, numbers, or tuples.
+- On the other hand, a list is an ordered collection of elements. It stores elements sequentially and allows duplicate values. List elements are accessed by their index, which is an integer value.
+
+4. If you try to access `spam['foo']` when `spam` is `{'bar': 100}`, you would get a `KeyError`. The key `'foo'` does not exist in the `spam` dictionary, so attempting to access it will raise an error.
+
+5. If a dictionary is stored in `spam`, the expression `'cat' in spam` checks if the key `'cat'` exists in the dictionary. It returns `True` if the key is present and `False` otherwise.
+
+   On the other hand, the expression `'cat' in spam.keys()` also checks if the key `'cat'` exists in the dictionary, but it does so by explicitly accessing the dictionary's keys using the `keys()` method. The result is the same as the previous expression, returning `True` if the key is present and `False` otherwise.
+
+6. If a dictionary is stored in `spam`, the expression `'cat' in spam` checks if the key `'cat'` exists in the dictionary. It returns `True` if the key is present and `False` otherwise.
+
+   The expression `'cat' in spam.values()` checks if the value `'cat'` exists in the dictionary's values. It returns `True` if the value is present and `False` otherwise.
+
+7. A shortcut for the given code is to use the `setdefault()` method of dictionaries:
+```python
+spam.setdefault('color', 'black')
+```
+This method checks if the key `'color'` exists in the dictionary. If it does, it returns the corresponding value. If it doesn't exist, it adds the key-value pair `'color': 'black'` to the dictionary.
+
+8. To "pretty print" dictionary values, you can use the `pprint` module's `pprint()` function. Here's an example:
+```python
+import pprint
+
+my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
+pprint.pprint(my_dict)
+```
+This function displays the dictionary in a formatted and readable way, making it easier to visualize its structure.
